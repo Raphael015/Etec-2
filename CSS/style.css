@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow-y: hidden;
+}
+
+a {
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.header {
+  background: rgba(235, 11, 204, 0.4);
+  padding-inline: 1px;
+}
+
+.nav {
+  max-width: 1280px;
+  height: 70px;
+  margin-inline: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  font-size: 2px;
+}
+
+.logo img{
+  width: 75px;
+}
+
+img{
+   width: 48px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: 18px;
+  color: #f895de;
+  padding-block: 16px;
+}
+
+.hero {
+  height: calc(100vh - 70px);
+}
+
+.hamburger {
+  display: none;
+  border: none;
+  background: none;
+  border-top: 3px solid #fff;
+  cursor: pointer;
+}
+
+.hamburger::after,
+.hamburger::before {
+  content: " ";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+
+  .hamburger {
+    display: block;
+    z-index: 1;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(235, 11, 204);
+    clip-path: circle(100px at 90% -15%);
+    transition: 1s ease-out;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+
+    pointer-events: none;
+  }
+
+  .nav-list a {
+    font-size: 24px;
+    opacity: 0;
+  }
+
+  .nav-list li:nth-child(1) a {
+    transition: 0.5s 0.2s;
+  }
+
+  .nav-list li:nth-child(2) a {
+    transition: 0.5s 0.4s;
+  }
+
+  .nav-list li:nth-child(3) a {
+    transition: 0.5s 0.6s;
+  }
+
+  /* Estilos ativos */
+
+  .nav.active .nav-list {
+    clip-path: circle(1500px at 90% -15%);
+    pointer-events: all;
+  }
+
+  .nav.active .nav-list a {
+    opacity: 1;
+  }
+
+  .nav.active .hamburger {
+    position: fixed;
+    top: 26px;
+    right: 16px;
+    border-top-color: transparent;
+  }
+
+  .nav.active .hamburger::before {
+    transform: rotate(135deg);
+  }
+
+  .nav.active .hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+}
+}
+
+u {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+footer {
+    position: relative;
+}
+
+footer .wave{
+    position: absolute;
+    top: -65px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(ondaroxa.png);
+    background-size: 1000px 100px;
+}
+
+footer .wave#wave1{
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 5s linear infinite;
+}
+footer .wave#wave2{
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 5s linear infinite;
+}
+
+
+footer .wave#wave3{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 4s linear infinite;
+}
+footer .wave#wave4{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_02 4s linear infinite;
+}
+
+@keyframes animateWave{
+    0%{
+        background-position-x: 1000px;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+}
+@keyframes animateWave_02{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+
+#retangulo {
+  width: 570px;
+  height: 70px;
+  border: 3px solid #eb0bcc;
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  background-color: rgba(77, 21, 69, 0.534);
+  transform: translate(-50%, -45.7%);
+  backdrop-filter: blur(6px);
+  border-radius: 0.55rem;
+  text-align: center;
+}
+.agaUm{
+  transform: translate(0%, 25%);
+  font-size: 40px;
+  color: #ff5ee9;
+}
+
+#retanguloDois {
+  width: 1500px;
+  height: 650px;
+  border: 3px solid #eb0bcc;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  background-color: rgba(77, 21, 69, 0.534);
+  transform: translate(-50%, -45.7%);
+  backdrop-filter: blur(6px);
+  border-radius: 0.55rem;
+  text-align: center;
+}
+.agaDoisUm{
+  transform: translate(0%, 35%);
+  font-size: 35px;
+  color: #ff5ee9;
+}
+#quadroCanvas{
+  width: 105px;
+  height: 5%;
+  margin-top: 150px; 
+  margin-left: 600px;
+  background-color: rgba(37, 10, 33, 0.247); /*rgba(247, 105, 228, 0.096);*/
+  border: 3px solid #eb0bcc;
+  border-radius: 0.75rem;
+  padding: 5.50rem;
+  text-align: center;
+}
